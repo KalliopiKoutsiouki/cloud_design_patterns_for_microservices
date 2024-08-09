@@ -1,0 +1,24 @@
+<div class="row justify-content-md-center">
+  <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Pictures</h5>
+        <input [(ngModel)]="userId" type="text" placeholder="Enter User ID" class="form-control mb-3">
+
+        <button (click)="fetchPictures()" class="btn btn-primary mb-3">Fetch Pictures</button>
+        <ul>
+          <li *ngFor="let pic of data">
+            <!-- <img [src]="pic.url" alt="Picture {{pic.id}}" style="max-width: 100%;"> -->
+            <p>Picture ID: {{pic.id}} PictureUrl: {{pic.url}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-md-center mt-4">
+  <div class="col-4">
+    <app-actuator></app-actuator>
+  </div>
+</div>
