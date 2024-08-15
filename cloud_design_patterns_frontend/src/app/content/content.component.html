@@ -1,10 +1,11 @@
 <div>
   <app-buttons
+    [isLoggedIn]="isLoggedIn"
     (loginEvent)="showComponent('login')"
-    (logoutEvent)="showComponent('welcome')"
+    (logoutEvent)="showComponent('login')"
   />
 
-	<app-welcome-content *ngIf="componentToShow == 'welcome'"/>
+	<!-- <app-welcome-content *ngIf="componentToShow == 'welcome'"/> -->
 	<app-login-form *ngIf="componentToShow == 'login'" (onSubmitLoginEvent)="onLogin($event)" (onSubmitRegisterEvent)="onRegister($event)"/>
 	<app-auth-content *ngIf="componentToShow == 'pictures'"/>
 

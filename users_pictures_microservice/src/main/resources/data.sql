@@ -1,0 +1,2 @@
+insert into USERS (FIRST_NAME, LAST_NAME, USER_NAME, PASSWORD ) values ('Test', 'Testopoulos', 'tost', '$2a$10$/oe1OZ8tGQz8wxPpoihoBuruuWtFQaPmKRKEzwDjZvt8mof2aWa7.');
+insert into USERS (FIRST_NAME, LAST_NAME, USER_NAME, PASSWORD ) values ('Test2', 'Testopoulou', 'error', '$2a$10$/oe1OZ8tGQz8wxPpoihoBuruuWtFQaPmKRKEzwDjZvt8mof2aWa7.');

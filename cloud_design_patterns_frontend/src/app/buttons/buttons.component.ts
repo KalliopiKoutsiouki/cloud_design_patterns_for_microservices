@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-buttons',
@@ -6,6 +6,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./buttons.component.css']
 })
 export class ButtonsComponent {
+  @Input() isLoggedIn: boolean = false;
 	@Output() loginEvent = new EventEmitter();
 	@Output() logoutEvent = new EventEmitter();
+
+  handleLogout(): void {
+    this.logoutEvent.emit(); 
+    this.isLoggedIn = false; 
+  
+  }
 }

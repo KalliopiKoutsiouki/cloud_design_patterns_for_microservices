@@ -27,11 +27,11 @@ public class User {
     @Size(max = 100)
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(name = "USER_NAME", nullable = false)
     @Size(max = 100)
     private String username;
 
-    @Column(nullable = false)
+    @Column(name ="PASSWORD", nullable = false)
     @Size(max = 100)
     private String password;
 }

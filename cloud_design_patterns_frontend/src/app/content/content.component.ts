@@ -7,12 +7,16 @@ import { AxiosService } from '../axios.service';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-	componentToShow: string = "welcome";
+	componentToShow: string = "login";
+	isLoggedIn: boolean = false;
 
 	constructor(private axiosService: AxiosService) { }
 
 	showComponent(componentToShow: string): void {
     this.componentToShow = componentToShow;
+	if (componentToShow === 'login') {
+		this.isLoggedIn = false;
+	  }
   }
 
 	onLogin(input: any): void {
@@ -25,10 +29,12 @@ export class ContentComponent {
 		    }).then(
 		    response => {
 		        this.axiosService.setAuthToken(response.data.token);
+				this.isLoggedIn = true; 
 		        this.componentToShow = "pictures";
 		    }).catch(
 		    error => {
 		        this.axiosService.setAuthToken(null);
+				this.isLoggedIn = false; 
 		        this.componentToShow = "welcome";
 		    }
 		);
@@ -47,10 +53,12 @@ export class ContentComponent {
 		    }).then(
 		    response => {
 		        this.axiosService.setAuthToken(response.data.token);
+				this.isLoggedIn = true;
 		        this.componentToShow = "pictures";
 		    }).catch(
 		    error => {
 		        this.axiosService.setAuthToken(null);
+				this.isLoggedIn = false;
 		        this.componentToShow = "welcome";
 		    }
 		);

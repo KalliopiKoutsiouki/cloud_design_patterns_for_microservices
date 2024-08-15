@@ -1,41 +1,22 @@
 package com.cloud_dp.users_pictures_microservice.entities;
 
 public class Picture {
-    private String id;
-    private String userId;
     private String url;
+    private String description;
 
-    public Picture() {
-    }
-
-    public Picture(String id, String userId, String url) {
-        this.id = id;
-        this.userId = userId;
-        this.url = url;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public String getUrl() {
+        return url;
     }
 
     public void setUrl(String url) {
         this.url = url;
     }
 
-    public String getId() {
-        return id;
+    public String getDescription() {
+        return description;
     }
 
-    public String getUserId() {
-        return userId;
+    public void setDescription(String description) {
+        this.description = description;
     }
-
-    public String getUrl() {
-        return url;
-    }
-
 }

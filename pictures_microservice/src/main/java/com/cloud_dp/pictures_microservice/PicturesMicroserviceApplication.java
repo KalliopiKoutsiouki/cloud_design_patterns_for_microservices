@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @SpringBootApplication
 @RestController
@@ -32,17 +31,17 @@ public class PicturesMicroserviceApplication {
 		SpringApplication.run(PicturesMicroserviceApplication.class, args);
 	}
 
-	@GetMapping("/pictures/{userId}")
-	public List<Picture> getUserPictures(@PathVariable String userId, @RequestHeader("Authorization") String token) throws CustomPicturesException {
-
-		if (userId.equals("1")) {
-			return Arrays.asList(
-					new Picture("1", userId, "http://example.com/pic1.jpg"),
-					new Picture("2", userId, "http://example.com/pic2.jpg")
-			);
+	@GetMapping("/pictures/{username}")
+	public List<Picture> getUserPictures(@PathVariable String username, @RequestHeader("Authorization") String token) throws CustomPicturesException {
+		if (username.equals("tost")) {
+			Picture item1 = new Picture("https://www.independenttradingco.com/cdn/shop/products/IND5000P-ALPG_2048x.jpg?v=1718147049", "Hoodie: 25$");
+			Picture item2 = new Picture("https://i5.walmartimages.com/asr/9cc0dbcf-d758-4836-b704-3dcbf7c6e357.432a95a8f9e32bb860f334c91b9445df.jpeg", "Cargo Pants: 30$");
+			Picture item3 = new Picture("https://cdn.mos.cms.futurecdn.net/N983zy9VUutHiZV8RBbmaA.jpg", "Pink Heels: 20$");
+			return List.of(item1, item2, item3);
 		} else {
 			throw new CustomPicturesException("Error");
 		}
 	}
+
 }
 

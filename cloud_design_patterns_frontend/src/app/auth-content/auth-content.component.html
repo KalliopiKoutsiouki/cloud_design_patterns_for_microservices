@@ -1,24 +1,23 @@
-<div class="row justify-content-md-center">
-  <div class="col-4">
+<div class="row">
+  <!-- Left Side: Pictures -->
+  <div class="col-md-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Pictures</h5>
-        <input [(ngModel)]="userId" type="text" placeholder="Enter User ID" class="form-control mb-3">
-
-        <button (click)="fetchPictures()" class="btn btn-primary mb-3">Fetch Pictures</button>
+        <h5 class="card-title">Your Basket</h5>
+        <input [(ngModel)]="userName" type="text" placeholder="Enter Username" class="form-control mb-3">
+        <button (click)="fetchPictures()" class="btn btn-primary mb-3">Fetch Items</button>
         <ul>
           <li *ngFor="let pic of data">
-            <!-- <img [src]="pic.url" alt="Picture {{pic.id}}" style="max-width: 100%;"> -->
-            <p>Picture ID: {{pic.id}} PictureUrl: {{pic.url}}</p>
+            <p>{{pic.description}}</p>
+            <img [src]="pic.url"  style="max-width: 100%; height: auto; margin-bottom: 15px;">
           </li>
         </ul>
       </div>
     </div>
   </div>
-</div>
 
-<div class="row justify-content-md-center mt-4">
-  <div class="col-4">
+  <!-- Right Side: Get Health Buttons -->
+  <div class="col-md-6">
     <app-actuator></app-actuator>
   </div>
 </div>

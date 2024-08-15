@@ -9,7 +9,7 @@ import { Picture } from '../model/Picture';
 })
 export class AuthContentComponent {
   data: Picture[] = [];
-  userId: string = '';
+  userName: string = '';
 
   constructor(private axiosService: AxiosService) {}
 
@@ -18,12 +18,12 @@ export class AuthContentComponent {
   }
 
   fetchPictures(): void {
-    if (!this.userId) {
-      console.error('User ID is required to fetch pictures');
+    if (!this.userName) {
+      console.error('Username is required to fetch pictures');
       return;
     }
 
-    const url = `/user-pictures/${this.userId}`;  // Construct URL dynamically based on userId
+    const url = `/user-pictures/${this.userName}`;  
 
     this.axiosService.request(
       'GET',

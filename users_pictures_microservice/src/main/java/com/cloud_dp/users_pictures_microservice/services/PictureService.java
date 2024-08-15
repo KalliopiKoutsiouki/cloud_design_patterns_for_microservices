@@ -24,7 +24,7 @@ public class PictureService {
 
     private static final Logger log = LoggerFactory.getLogger(PictureService.class);
 
-//    @Retry(name = "picturesRetry")
+    @Retry(name = "picturesRetry")
     @CircuitBreaker(name = "picturesCircuitBreaker", fallbackMethod = "serviceFallbackMethod")
     public List<Picture> getUserPictures(String userId) {
         log.info("Attempt to retrieve pictures for user {}", userId);
