@@ -28,13 +28,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             try {
                 SecurityContextHolder.getContext().setAuthentication(authenticationProvider.validateToken(token));
             } catch (Exception e) {
-                // Invalid token or other authentication error
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 return;
             }
         }
-
-        // Continue the filter chain
         filterChain.doFilter(request, response);
     }
 }

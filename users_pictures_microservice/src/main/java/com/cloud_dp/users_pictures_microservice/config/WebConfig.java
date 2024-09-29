@@ -42,7 +42,7 @@ public class WebConfig {
     @Bean
     public FilterRegistrationBean<CorsFilter> corsFilterRegistration(CorsFilter corsFilter) {
         FilterRegistrationBean<CorsFilter> registrationBean = new FilterRegistrationBean<>(corsFilter);
-        registrationBean.setOrder(CORS_FILTER_ORDER); // should be set order to -100 because we need to CorsFilter before SpringSecurityFilter
+        registrationBean.setOrder(CORS_FILTER_ORDER);
         return registrationBean;
     }
 }

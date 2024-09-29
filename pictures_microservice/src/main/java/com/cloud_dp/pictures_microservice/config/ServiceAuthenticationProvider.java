@@ -41,8 +41,6 @@ public class ServiceAuthenticationProvider {
         if (!"user-pictures".equals(decoded.getClaim("service").asString())) {
             throw new SecurityException("Unauthorized source");
         }
-
-        // Here you could return more detailed Authentication if needed
         return new UsernamePasswordAuthenticationToken(decoded.getSubject(), null, Collections.emptyList());
     }
 }
