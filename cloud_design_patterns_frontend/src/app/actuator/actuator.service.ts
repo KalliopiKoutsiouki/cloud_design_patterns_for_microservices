@@ -5,7 +5,7 @@ import { AxiosService } from '../axios.service';
   providedIn: 'root',
 })
 export class ActuatorService {
-  private baseUrl = 'http://localhost:8083/actuator'; // Replace with your Spring Boot app's URL
+  private baseUrl = 'http://localhost:8083/actuator';
 
   constructor(private axiosService: AxiosService) {}
 

@@ -41,7 +41,7 @@ export class AxiosService {
     }).catch(error => {
       if (error.response && error.response.status === 401) {
         console.error('Unauthorized - Redirect to login or refresh token');
-        this.setAuthToken(null);  // Clear token if expired or invalid
+        this.setAuthToken(null);
       }
       return Promise.reject(error);
     });
